@@ -1,5 +1,6 @@
 package com.example.museus;
 
+import com.example.museus.models.Museums;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

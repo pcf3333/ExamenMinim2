@@ -1,4 +1,4 @@
-package com.example.museus;
+package com.example.museus.models;
 
 public class Address {
 

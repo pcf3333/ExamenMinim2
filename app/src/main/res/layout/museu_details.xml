@@ -51,17 +51,6 @@
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
-        android:id="@+id/extIAlt"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.9"
-        android:layout_height="35dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline99"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline19" />
-
-    <TextView
         android:id="@+id/descripcio"
         android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.9"
@@ -104,17 +93,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline99"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
-
-    <TextView
-        android:id="@+id/habitants"
-        android:layout_width="0dp"
-        app:layout_constraintWidth_percent="0.9"
-        android:layout_height="35dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline99"
-        app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"

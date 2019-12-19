@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.museus.models.Element;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -18,8 +19,6 @@ public class MuseumDetails extends AppCompatActivity {
     private TextView telefon;
     private ImageView escut;
     private ImageView image;
-    private TextView habitants;
-    private TextView extIAlt;
 
 
     @Override
@@ -35,8 +34,6 @@ public class MuseumDetails extends AppCompatActivity {
         telefon=findViewById(R.id.telefon);
         escut=findViewById(R.id.escut);
         image=findViewById(R.id.image);
-        habitants=findViewById(R.id.habitants);
-        extIAlt=findViewById(R.id.extIAlt);
 
         Gson gson = new Gson();
         Element element = gson.fromJson(getIntent().getStringExtra("ObjectesMuseu"), Element.class);
@@ -47,8 +44,6 @@ public class MuseumDetails extends AppCompatActivity {
         nomICP.setText(element.getGrupAdreca().getMunicipiNom()+""+element.getGrupAdreca().getCodiPostal());
         email.setText(element.getEmail().get(0));
         telefon.setText(element.getTelefonContacte().get(0));
-        habitants.setText("ni idea");
-        extIAlt.setText("tampoc");
 
         Picasso.with(this).load(element.getImatge().get(0)).into(image);
         Picasso.with(this).load(element.getRelMunicipis().getMunicipiEscut()).into(escut);

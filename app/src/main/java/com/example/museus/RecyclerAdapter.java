@@ -3,7 +3,6 @@ package com.example.museus;
 
 import android.content.Context;
 import android.content.Intent;
-import android.telephony.mbms.MbmsErrors;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museus.models.Element;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 

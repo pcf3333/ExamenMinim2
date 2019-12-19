@@ -1,5 +1,5 @@
 
-package com.example.museus;
+package com.example.museus.models;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

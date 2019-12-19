@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String DUMMY_CREDENTIALS = "user,dsamola";
 
+    private SharedPreferences sharedPref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +43,41 @@ public class MainActivity extends AppCompatActivity {
         usernameText=findViewById(R.id.usernameText);
         passwordText=findViewById(R.id.passwordText);
         loadingText=findViewById(R.id.loadingText);
+
+        //Entrem el susuari
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username", "user");
+        editor.putString("password","dsamola");
+        editor.putBoolean("registered",false);
+        editor.apply();
+
+        showAlreadyLogged();
+
     }
 
     public void goToMuseums(View view){
         tryLogin();
     }
 
+    //Si ja esta registrat entra directe
+    private void showAlreadyLogged(){
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+
+        String user = sharedPref.getString("username", "");
+        String pssw = sharedPref.getString("password", "");
+        Boolean registered = sharedPref.getBoolean("resgistered",false);
+
+        if (user.equals("user") && pssw.equals("dsamola") && registered) {
+            newIntent();
+        }
+    }
 
     /**
      * Shows the progress UI and hides the login form.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgressBar(final boolean show) {
-        // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-        // for very easy animations. If available, use these APIs to fade-in
-        // the progress spinner.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -139,15 +161,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
 
-            //Nomes el usuari "user" amb password "dsamola" podra accedir
-            String[] t = DUMMY_CREDENTIALS.split(",");
-            if (t[0].equals(LogUser) && t[1].equals(LogPassword)) {
-                // Account exists, return true if the password matches.
-                return true;
-            }
-            else{
-                return false;
-            }
+            return true;
 
 
         }
@@ -158,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
             showProgressBar(false);
 
             if (success) {
-                final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putBoolean("registered", true);
                 editor.putString("username", this.LogUser);

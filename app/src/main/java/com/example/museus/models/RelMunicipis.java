@@ -1,4 +1,4 @@
-package com.example.museus;
+package com.example.museus.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
