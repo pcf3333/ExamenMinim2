@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     private UserLoginTask tascaLogIn = null;
 
-    private static final String DUMMY_CREDENTIALS = "user,dsamola";
-
     private SharedPreferences sharedPref;
 
 
@@ -45,12 +43,12 @@ public class MainActivity extends AppCompatActivity {
         loadingText=findViewById(R.id.loadingText);
 
         //Entrem el susuari
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username", "user");
-        editor.putString("password","dsamola");
-        editor.putBoolean("registered",false);
-        editor.apply();
+//        sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+//        SharedPreferences.Editor editor = sharedPref.edit();
+//        editor.putString("username", "user");
+//        editor.putString("password","dsamola");
+//        editor.putBoolean("registered",false);
+//        editor.apply();
 
         showAlreadyLogged();
 
