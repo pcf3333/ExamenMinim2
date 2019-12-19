@@ -2,12 +2,15 @@ package com.example.museus;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -106,5 +109,6 @@ public class MuseumsActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }

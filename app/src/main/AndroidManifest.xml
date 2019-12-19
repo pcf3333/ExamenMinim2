@@ -27,6 +27,15 @@
                 android:value=".MuseumsActivity" />
 
         </activity>
+        <activity android:name=".MuseumDetails"
+            android:parentActivityName=".MuseumsActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MuseumDetails" />
+
+        </activity>
     </application>
 
 </manifest>
